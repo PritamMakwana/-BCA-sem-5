@@ -1,0 +1,5 @@
+tpl=(10,-20,15.5,'user','admin')
+print(tpl[0:3])
+print(tpl[0])
+print(tpl[1:3])
+print(tpl[-2])

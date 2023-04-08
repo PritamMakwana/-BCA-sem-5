@@ -1,0 +1,41 @@
+use ksc_db_36
+go 
+create table dimpation(
+p_id int primary key not null,
+p_name varchar(50) null,
+p_mobile varchar(12) null
+)
+go
+create table dimmadecin(
+m_id int primary key not null,
+m_name varchar(50) null,
+m_code varchar(12) null
+)
+go
+create table dimstarf(
+s_id int primary key not null,
+s_name varchar(50) null,
+s_mobile varchar(12) null,
+s_role varchar(10) null
+)
+go 
+create table dinward(
+w_id int primary key not null,
+w_name varchar(50) not null,
+w_no varchar(50) not null
+)
+go 
+create table diminvoice(
+id int primary key not null,
+name varchar(50) not null
+)
+go 
+alter table factinvoice
+add m_id int references
+dimmadecin (m_id),
+s_id int references
+dimstarf (s_id),
+w_id int references
+dinward (w_id),
+p_id int references
+dimpation (p_id)
